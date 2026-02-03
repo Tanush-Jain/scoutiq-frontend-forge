@@ -39,7 +39,7 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background */}
+        {/* Background Overlay */}
         <div className="absolute inset-0 z-0">
           <img
             src={heroBackground}
@@ -49,8 +49,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
         </div>
 
-        {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 grid-pattern opacity-40 z-0" />
+        {/* Grid Pattern Overlay - sits above canvas (z-1) */}
+        <div className="absolute inset-0 grid-pattern opacity-40 z-[1]" />
 
         <div className="container-width relative z-10">
           <div className="max-w-4xl mx-auto text-center">
