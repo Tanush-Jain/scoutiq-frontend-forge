@@ -11,7 +11,7 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
-import { StarfieldCanvas } from "@/components/StarfieldCanvas";
+import BackgroundFX from "@/backgroundfx/BackgroundFX";
 
 const queryClient = new QueryClient();
 
@@ -21,14 +21,13 @@ const App = () => (
       <Toaster />
       <Sonner />
       {/*
-        StarfieldCanvas: Fixed position canvas behind all content.
+        BackgroundFX: Single full-screen canvas mounted at app root.
         Z-INDEX STRATEGY:
-        - Canvas uses z-0 (bottom layer, above solid background)
-        - Grid pattern in pages uses z-[1]
-        - Page content uses z-10 (top layer)
-        - pointer-events: none ensures clicks pass through
+        - BackgroundFX uses inline zIndex: 10 so it sits above the grid-pattern (z-1)
+          and the body background but below interactive content (z-20+).
+        - pointer-events: none so it never blocks user input.
       */}
-      <StarfieldCanvas />
+      <BackgroundFX />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
