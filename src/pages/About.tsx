@@ -1,0 +1,241 @@
+import { Layout } from '@/components/layout/Layout';
+import { SectionHeader } from '@/components/shared/SectionHeader';
+import { Database, Brain, Cpu, Target, Users, Award, Globe } from 'lucide-react';
+
+const timeline = [
+  {
+    version: 'v1',
+    title: 'Data Ingestion',
+    description: 'Real-time data collection from major esports APIs, match feeds, and tournament systems.',
+    icon: Database,
+    status: 'complete',
+  },
+  {
+    version: 'v2',
+    title: 'Intelligence Engine',
+    description: 'Advanced machine learning models for player analysis, team composition, and strategic insights.',
+    icon: Brain,
+    status: 'active',
+  },
+  {
+    version: 'v3',
+    title: 'Predictive Systems',
+    description: 'Next-generation prediction models with tournament simulation and roster optimization.',
+    icon: Cpu,
+    status: 'upcoming',
+  },
+];
+
+const team = [
+  {
+    role: 'CEO & Co-Founder',
+    bio: 'Former esports analyst with 8 years in competitive gaming. Built analytics systems for Tier 1 organizations.',
+  },
+  {
+    role: 'CTO & Co-Founder',
+    bio: 'Machine learning engineer from top tech companies. PhD in predictive modeling and sports analytics.',
+  },
+  {
+    role: 'Head of Product',
+    bio: '10+ years building data products. Previously led analytics at a major gaming publisher.',
+  },
+  {
+    role: 'Head of Esports',
+    bio: 'Former professional player turned coach. Deep network across Valorant, CS, and LoL scenes.',
+  },
+];
+
+const stats = [
+  { value: '50M+', label: 'Matches Analyzed' },
+  { value: '500K+', label: 'Players Tracked' },
+  { value: '100+', label: 'Tournaments Covered' },
+  { value: '85%', label: 'Prediction Accuracy' },
+];
+
+export default function About() {
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="section-padding pt-32">
+        <div className="container-width">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              About ScoutIQ
+            </span>
+            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6">
+              Building the Intelligence Layer for{' '}
+              <span className="gradient-text">Competitive Gaming</span>
+            </h1>
+            <p className="text-lg lg:text-xl text-muted-foreground">
+              We're not just delivering stats. We're building decision intelligence 
+              that helps teams, analysts, and organizations win in competitive esports.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="py-12 lg:py-16">
+        <div className="container-width">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="p-6 rounded-xl bg-card border border-border text-center"
+              >
+                <div className="font-display text-3xl lg:text-4xl font-bold gradient-text mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="section-padding bg-card/50">
+        <div className="container-width">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <SectionHeader
+                badge="Our Mission"
+                title="Data-Driven Decisions for Esports Excellence"
+                subtitle=""
+                centered={false}
+              />
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  The esports industry generates massive amounts of data every day—match results, 
+                  player stats, strategic patterns, economic trends. But most of it goes unused.
+                </p>
+                <p>
+                  ScoutIQ exists to transform that raw data into actionable intelligence. 
+                  We give teams the insights they need to scout better, draft smarter, and compete harder.
+                </p>
+                <p>
+                  Our AI doesn't just analyze what happened—it predicts what will happen next, 
+                  giving our clients a competitive edge that was previously impossible.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
+                <Target className="w-8 h-8 text-primary mb-4" />
+                <h3 className="font-display font-semibold text-foreground mb-2">Precision</h3>
+                <p className="text-sm text-muted-foreground">Every insight backed by data</p>
+              </div>
+              <div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
+                <Globe className="w-8 h-8 text-primary mb-4" />
+                <h3 className="font-display font-semibold text-foreground mb-2">Global</h3>
+                <p className="text-sm text-muted-foreground">Coverage across all regions</p>
+              </div>
+              <div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
+                <Award className="w-8 h-8 text-primary mb-4" />
+                <h3 className="font-display font-semibold text-foreground mb-2">Excellence</h3>
+                <p className="text-sm text-muted-foreground">Built for winners</p>
+              </div>
+              <div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
+                <Users className="w-8 h-8 text-primary mb-4" />
+                <h3 className="font-display font-semibold text-foreground mb-2">Trusted</h3>
+                <p className="text-sm text-muted-foreground">Used by top organizations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="section-padding">
+        <div className="container-width">
+          <SectionHeader
+            badge="Product Evolution"
+            title="Our Journey to Esports AGI"
+            subtitle="Building the most comprehensive intelligence platform in competitive gaming."
+          />
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {timeline.map((item, index) => (
+              <div
+                key={item.version}
+                className={`relative p-6 lg:p-8 rounded-xl border ${
+                  item.status === 'active'
+                    ? 'bg-gradient-to-b from-primary/10 to-card border-primary/50'
+                    : 'bg-card border-border'
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                      item.status === 'complete'
+                        ? 'bg-green-500/20'
+                        : item.status === 'active'
+                        ? 'bg-primary/20'
+                        : 'bg-muted'
+                    }`}
+                  >
+                    <item.icon
+                      className={`w-6 h-6 ${
+                        item.status === 'complete'
+                          ? 'text-green-400'
+                          : item.status === 'active'
+                          ? 'text-primary'
+                          : 'text-muted-foreground'
+                      }`}
+                    />
+                  </div>
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      item.status === 'complete'
+                        ? 'bg-green-500/20 text-green-400'
+                        : item.status === 'active'
+                        ? 'bg-primary/20 text-primary'
+                        : 'bg-muted text-muted-foreground'
+                    }`}
+                  >
+                    {item.status === 'complete' ? 'Complete' : item.status === 'active' ? 'In Progress' : 'Upcoming'}
+                  </span>
+                </div>
+                <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                  {item.version}: {item.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="section-padding bg-card/50">
+        <div className="container-width">
+          <SectionHeader
+            badge="Leadership"
+            title="Built by Industry Veterans"
+            subtitle="Our team combines deep esports expertise with world-class technical skills."
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-xl bg-card border border-border card-glow"
+              >
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4">
+                  <span className="font-display text-2xl font-bold text-primary">
+                    {member.role.split(' ')[0][0]}
+                  </span>
+                </div>
+                <h3 className="font-display font-semibold text-foreground mb-2">
+                  {member.role}
+                </h3>
+                <p className="text-sm text-muted-foreground">{member.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+}
