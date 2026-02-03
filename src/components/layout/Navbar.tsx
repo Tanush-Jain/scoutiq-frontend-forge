@@ -15,16 +15,16 @@ export function Navbar() {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container-width">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">SQ</span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-8 h-8 rounded border border-foreground flex items-center justify-center">
+              <span className="text-foreground font-bold text-sm tracking-tight">SQ</span>
             </div>
-            <span className="font-display font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-              ScoutIQ
+            <span className="font-display font-bold text-lg text-foreground tracking-tight">
+              SCOUTIQ
             </span>
           </Link>
 
@@ -34,10 +34,10 @@ export function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`nav-link text-sm font-medium uppercase tracking-wider transition-colors pb-1 ${
                   location.pathname === link.path
-                    ? 'text-primary'
-                    : 'text-muted-foreground'
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 {link.name}
@@ -47,10 +47,10 @@ export function Navbar() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link to="/login" className="btn-secondary text-sm py-2">
+            <Link to="/login" className="btn-secondary text-sm py-2 uppercase tracking-wider">
               Log In
             </Link>
-            <Link to="/signup" className="btn-primary text-sm py-2">
+            <Link to="/signup" className="btn-primary text-sm py-2 uppercase tracking-wider">
               Get Started
             </Link>
           </div>
@@ -74,9 +74,9 @@ export function Navbar() {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block py-2 text-sm font-medium transition-colors hover:text-primary ${
+                className={`block py-2 text-sm font-medium uppercase tracking-wider transition-colors ${
                   location.pathname === link.path
-                    ? 'text-primary'
+                    ? 'text-foreground'
                     : 'text-muted-foreground'
                 }`}
               >
@@ -84,10 +84,10 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex gap-4 pt-4 border-t border-border">
-              <Link to="/login" className="btn-secondary text-sm py-2 flex-1 text-center">
+              <Link to="/login" className="btn-secondary text-sm py-2 flex-1 text-center uppercase tracking-wider">
                 Log In
               </Link>
-              <Link to="/signup" className="btn-primary text-sm py-2 flex-1 text-center">
+              <Link to="/signup" className="btn-primary text-sm py-2 flex-1 text-center uppercase tracking-wider">
                 Get Started
               </Link>
             </div>
