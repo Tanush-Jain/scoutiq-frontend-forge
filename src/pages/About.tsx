@@ -59,10 +59,10 @@ export default function About() {
       <section className="section-padding pt-32">
         <div className="container-width">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 rounded border border-border text-muted-foreground text-xs font-medium uppercase tracking-widest mb-6">
               About ScoutIQ
             </span>
-            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 tracking-tight">
               Building the Intelligence Layer for{' '}
               <span className="gradient-text">Competitive Gaming</span>
             </h1>
@@ -81,12 +81,12 @@ export default function About() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="p-6 rounded-xl bg-card border border-border text-center"
+                className="p-6 rounded-lg bg-card border border-border text-center hover:border-foreground/30 transition-all duration-300"
               >
-                <div className="font-display text-3xl lg:text-4xl font-bold gradient-text mb-2">
+                <div className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-2 stat-number">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -94,7 +94,7 @@ export default function About() {
       </section>
 
       {/* Mission */}
-      <section className="section-padding bg-card/50">
+      <section className="section-padding bg-card/30">
         <div className="container-width">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -121,24 +121,24 @@ export default function About() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
-                <Target className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-display font-semibold text-foreground mb-2">Precision</h3>
+              <div className="p-6 rounded-lg bg-card border border-border hover:border-foreground/30 transition-all duration-300">
+                <Target className="w-8 h-8 text-foreground mb-4" />
+                <h3 className="font-display font-semibold text-foreground mb-2 tracking-tight">Precision</h3>
                 <p className="text-sm text-muted-foreground">Every insight backed by data</p>
               </div>
-              <div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
-                <Globe className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-display font-semibold text-foreground mb-2">Global</h3>
+              <div className="p-6 rounded-lg bg-card border border-border hover:border-foreground/30 transition-all duration-300">
+                <Globe className="w-8 h-8 text-foreground mb-4" />
+                <h3 className="font-display font-semibold text-foreground mb-2 tracking-tight">Global</h3>
                 <p className="text-sm text-muted-foreground">Coverage across all regions</p>
               </div>
-              <div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
-                <Award className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-display font-semibold text-foreground mb-2">Excellence</h3>
+              <div className="p-6 rounded-lg bg-card border border-border hover:border-foreground/30 transition-all duration-300">
+                <Award className="w-8 h-8 text-foreground mb-4" />
+                <h3 className="font-display font-semibold text-foreground mb-2 tracking-tight">Excellence</h3>
                 <p className="text-sm text-muted-foreground">Built for winners</p>
               </div>
-              <div className="p-6 rounded-xl bg-secondary/30 border border-border/50">
-                <Users className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-display font-semibold text-foreground mb-2">Trusted</h3>
+              <div className="p-6 rounded-lg bg-card border border-border hover:border-foreground/30 transition-all duration-300">
+                <Users className="w-8 h-8 text-foreground mb-4" />
+                <h3 className="font-display font-semibold text-foreground mb-2 tracking-tight">Trusted</h3>
                 <p className="text-sm text-muted-foreground">Used by top organizations</p>
               </div>
             </div>
@@ -156,51 +156,55 @@ export default function About() {
           />
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {timeline.map((item, index) => (
+            {timeline.map((item) => (
               <div
                 key={item.version}
-                className={`relative p-6 lg:p-8 rounded-xl border ${
+                className={`relative p-6 lg:p-8 rounded-lg border ${
                   item.status === 'active'
-                    ? 'bg-gradient-to-b from-primary/10 to-card border-primary/50'
+                    ? 'bg-foreground text-background border-foreground'
                     : 'bg-card border-border'
                 }`}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                      item.status === 'complete'
-                        ? 'bg-green-500/20'
-                        : item.status === 'active'
-                        ? 'bg-primary/20'
-                        : 'bg-muted'
+                    className={`w-12 h-12 rounded-lg border flex items-center justify-center ${
+                      item.status === 'active'
+                        ? 'border-background/30'
+                        : 'border-border'
                     }`}
                   >
                     <item.icon
                       className={`w-6 h-6 ${
-                        item.status === 'complete'
-                          ? 'text-green-400'
-                          : item.status === 'active'
-                          ? 'text-primary'
+                        item.status === 'active'
+                          ? 'text-background'
+                          : item.status === 'complete'
+                          ? 'text-foreground'
                           : 'text-muted-foreground'
                       }`}
                     />
                   </div>
                   <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      item.status === 'complete'
-                        ? 'bg-green-500/20 text-green-400'
-                        : item.status === 'active'
-                        ? 'bg-primary/20 text-primary'
-                        : 'bg-muted text-muted-foreground'
+                    className={`px-3 py-1 rounded border text-xs font-medium uppercase tracking-wider ${
+                      item.status === 'active'
+                        ? 'border-background/30 text-background'
+                        : item.status === 'complete'
+                        ? 'border-foreground text-foreground'
+                        : 'border-border text-muted-foreground'
                     }`}
                   >
                     {item.status === 'complete' ? 'Complete' : item.status === 'active' ? 'In Progress' : 'Upcoming'}
                   </span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-foreground mb-2">
+                <h3 className={`font-display text-xl font-bold mb-2 tracking-tight ${
+                  item.status === 'active' ? 'text-background' : 'text-foreground'
+                }`}>
                   {item.version}: {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <p className={`text-sm ${
+                  item.status === 'active' ? 'text-background/70' : 'text-muted-foreground'
+                }`}>
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
@@ -208,7 +212,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="section-padding bg-card/50">
+      <section className="section-padding bg-card/30">
         <div className="container-width">
           <SectionHeader
             badge="Leadership"
@@ -220,14 +224,14 @@ export default function About() {
             {team.map((member, index) => (
               <div
                 key={index}
-                className="p-6 rounded-xl bg-card border border-border card-glow"
+                className="p-6 rounded-lg bg-card border border-border card-glow"
               >
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4">
-                  <span className="font-display text-2xl font-bold text-primary">
+                <div className="w-16 h-16 rounded-lg border border-border flex items-center justify-center mb-4">
+                  <span className="font-display text-2xl font-bold text-foreground">
                     {member.role.split(' ')[0][0]}
                   </span>
                 </div>
-                <h3 className="font-display font-semibold text-foreground mb-2">
+                <h3 className="font-display font-semibold text-foreground mb-2 tracking-tight">
                   {member.role}
                 </h3>
                 <p className="text-sm text-muted-foreground">{member.bio}</p>

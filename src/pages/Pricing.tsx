@@ -96,10 +96,10 @@ export default function Pricing() {
       <section className="section-padding pt-32">
         <div className="container-width">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 rounded border border-border text-muted-foreground text-xs font-medium uppercase tracking-widest mb-6">
               Pricing
             </span>
-            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 tracking-tight">
               Intelligence That{' '}
               <span className="gradient-text">Scales With You</span>
             </h1>
@@ -133,7 +133,7 @@ export default function Pricing() {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-card/50">
+      <section className="section-padding bg-card/30">
         <div className="container-width">
           <SectionHeader
             badge="FAQ"
@@ -145,11 +145,11 @@ export default function Pricing() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="p-6 rounded-xl bg-card border border-border"
+                className="p-6 rounded-lg bg-card border border-border hover:border-foreground/30 transition-all duration-300"
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <HelpCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <h3 className="font-display font-semibold text-foreground">
+                  <HelpCircle className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
+                  <h3 className="font-display font-semibold text-foreground tracking-tight">
                     {faq.question}
                   </h3>
                 </div>
@@ -163,21 +163,21 @@ export default function Pricing() {
       {/* CTA */}
       <section className="section-padding">
         <div className="container-width">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-card to-accent/20 border border-border p-8 lg:p-16 text-center">
-            <div className="absolute inset-0 grid-pattern opacity-20" />
+          <div className="relative overflow-hidden rounded-lg bg-card border border-border p-8 lg:p-16 text-center">
+            <div className="absolute inset-0 grid-pattern opacity-30" />
             <div className="relative z-10">
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4 tracking-tight">
                 Need a Custom Solution?
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
                 Our enterprise team can build custom intelligence solutions tailored to your specific needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact" className="btn-primary inline-flex items-center justify-center gap-2">
+                <Link to="/contact" className="btn-primary inline-flex items-center justify-center gap-2 uppercase tracking-wider">
                   Talk to Sales
                   <ArrowRight size={18} />
                 </Link>
-                <Link to="/contact" className="btn-secondary inline-flex items-center justify-center gap-2">
+                <Link to="/contact" className="btn-secondary inline-flex items-center justify-center gap-2 uppercase tracking-wider">
                   Request Custom Plan
                 </Link>
               </div>

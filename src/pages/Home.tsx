@@ -44,24 +44,24 @@ export default function Home() {
           <img
             src={heroBackground}
             alt=""
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-20 grayscale"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/80 to-background" />
         </div>
 
         {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 grid-pattern opacity-30 z-0" />
+        <div className="absolute inset-0 grid-pattern opacity-40 z-0" />
 
         <div className="container-width relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm font-medium text-primary">Now supporting 5 major esports titles</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded border border-border mb-6 animate-fade-up">
+              <span className="w-2 h-2 rounded-full bg-foreground animate-pulse" />
+              <span className="text-xs font-medium text-muted-foreground uppercase tracking-widest">Now supporting 5 major esports titles</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              AI-Powered{' '}
-              <span className="gradient-text">Esports Intelligence</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-6 animate-fade-up tracking-tight" style={{ animationDelay: '0.1s' }}>
+              AI-POWERED{' '}
+              <span className="gradient-text">ESPORTS INTELLIGENCE</span>
             </h1>
 
             <p className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: '0.2s' }}>
@@ -70,11 +70,11 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.3s' }}>
-              <Link to="/contact" className="btn-primary inline-flex items-center justify-center gap-2">
+              <Link to="/contact" className="btn-primary inline-flex items-center justify-center gap-2 uppercase tracking-wider">
                 Request Demo
                 <ArrowRight size={18} />
               </Link>
-              <Link to="/services" className="btn-secondary inline-flex items-center justify-center gap-2">
+              <Link to="/services" className="btn-secondary inline-flex items-center justify-center gap-2 uppercase tracking-wider">
                 View Platform
               </Link>
             </div>
@@ -83,14 +83,14 @@ export default function Home() {
 
         {/* Floating Elements */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 rounded-full bg-muted-foreground/50" />
+          <div className="w-6 h-10 rounded-full border border-border flex items-start justify-center p-2">
+            <div className="w-1 h-2 rounded-full bg-foreground/50" />
           </div>
         </div>
       </section>
 
       {/* Featured Games */}
-      <section className="section-padding bg-card/50">
+      <section className="section-padding bg-card/30">
         <div className="container-width">
           <SectionHeader
             badge="Games We Cover"
@@ -136,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* Trust Section */}
-      <section className="section-padding bg-card/50">
+      <section className="section-padding bg-card/30">
         <div className="container-width">
           <div className="text-center mb-12">
             <p className="text-muted-foreground text-lg">
@@ -148,18 +148,18 @@ export default function Home() {
             {trustItems.map((item) => (
               <div
                 key={item.label}
-                className="flex flex-col items-center gap-3 p-6 rounded-xl bg-secondary/30 border border-border/50"
+                className="flex flex-col items-center gap-3 p-6 rounded-lg bg-card border border-border hover:border-foreground/30 transition-all duration-300"
               >
-                <item.icon className="w-8 h-8 text-primary" />
-                <span className="font-medium text-foreground">{item.label}</span>
+                <item.icon className="w-8 h-8 text-foreground" />
+                <span className="font-medium text-foreground text-sm uppercase tracking-wider">{item.label}</span>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/about" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium">
+            <Link to="/about" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-medium text-sm uppercase tracking-wider">
               Learn more about ScoutIQ
-              <ArrowRight size={18} />
+              <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -168,16 +168,16 @@ export default function Home() {
       {/* CTA Section */}
       <section className="section-padding">
         <div className="container-width">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-card to-accent/20 border border-border p-8 lg:p-16 text-center">
-            <div className="absolute inset-0 grid-pattern opacity-20" />
+          <div className="relative overflow-hidden rounded-lg bg-card border border-border p-8 lg:p-16 text-center">
+            <div className="absolute inset-0 grid-pattern opacity-30" />
             <div className="relative z-10">
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4 tracking-tight">
                 Ready to Gain the Competitive Edge?
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
                 Join the leading esports organizations already using ScoutIQ to make smarter decisions.
               </p>
-              <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+              <Link to="/contact" className="btn-primary inline-flex items-center gap-2 uppercase tracking-wider">
                 Get Started Today
                 <ArrowRight size={18} />
               </Link>

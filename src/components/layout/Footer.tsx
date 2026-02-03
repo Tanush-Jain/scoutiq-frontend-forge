@@ -28,31 +28,31 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-background border-t border-border">
       <div className="container-width section-padding">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">SQ</span>
+            <Link to="/" className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-8 rounded border border-foreground flex items-center justify-center">
+                <span className="text-foreground font-bold text-sm tracking-tight">SQ</span>
               </div>
-              <span className="font-display font-bold text-xl text-foreground">
-                ScoutIQ
+              <span className="font-display font-bold text-lg text-foreground tracking-tight">
+                SCOUTIQ
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
               AI-powered esports intelligence platform. Scouting, prediction, and performance analytics for competitive gaming.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-colors"
+                  className="w-10 h-10 rounded border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-foreground transition-all duration-300"
                 >
-                  <social.icon size={18} />
+                  <social.icon size={16} />
                 </a>
               ))}
             </div>
@@ -60,13 +60,13 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Product</h4>
+            <h4 className="font-display font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Product</h4>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -76,13 +76,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Company</h4>
+            <h4 className="font-display font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -92,13 +92,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-semibold text-foreground mb-4">Legal</h4>
+            <h4 className="font-display font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Legal</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -112,8 +112,8 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} ScoutIQ. All rights reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Built with ❤️ for the esports community
+          <p className="text-xs text-muted-foreground/60 uppercase tracking-wider">
+            Built for the competitive edge
           </p>
         </div>
       </div>

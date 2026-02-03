@@ -88,10 +88,10 @@ export default function Services() {
       <section className="section-padding pt-32">
         <div className="container-width">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 rounded border border-border text-muted-foreground text-xs font-medium uppercase tracking-widest mb-6">
               Our Platform
             </span>
-            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 tracking-tight">
               AI Intelligence for{' '}
               <span className="gradient-text">Every Esports Need</span>
             </h1>
@@ -127,7 +127,7 @@ export default function Services() {
       </section>
 
       {/* Roadmap */}
-      <section id="roadmap" className="section-padding bg-card/50">
+      <section id="roadmap" className="section-padding bg-card/30">
         <div className="container-width">
           <SectionHeader
             badge="Roadmap"
@@ -136,69 +136,77 @@ export default function Services() {
           />
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {roadmap.map((item, index) => (
+            {roadmap.map((item) => (
               <div
                 key={item.phase}
-                className={`relative p-6 lg:p-8 rounded-xl border ${
+                className={`relative p-6 lg:p-8 rounded-lg border ${
                   item.status === 'active'
-                    ? 'bg-gradient-to-b from-primary/10 to-card border-primary/50'
+                    ? 'bg-foreground text-background border-foreground'
                     : 'bg-card border-border'
                 }`}
               >
                 <div className="flex items-center justify-between mb-6">
                   <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                      item.status === 'complete'
-                        ? 'bg-green-500/20'
-                        : item.status === 'active'
-                        ? 'bg-primary/20'
-                        : 'bg-muted'
+                    className={`w-12 h-12 rounded-lg border flex items-center justify-center ${
+                      item.status === 'active'
+                        ? 'border-background/30'
+                        : 'border-border'
                     }`}
                   >
                     <item.icon
                       className={`w-6 h-6 ${
-                        item.status === 'complete'
-                          ? 'text-green-400'
-                          : item.status === 'active'
-                          ? 'text-primary'
+                        item.status === 'active'
+                          ? 'text-background'
+                          : item.status === 'complete'
+                          ? 'text-foreground'
                           : 'text-muted-foreground'
                       }`}
                     />
                   </div>
                   <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      item.status === 'complete'
-                        ? 'bg-green-500/20 text-green-400'
-                        : item.status === 'active'
-                        ? 'bg-primary/20 text-primary'
-                        : 'bg-muted text-muted-foreground'
+                    className={`px-3 py-1 rounded border text-xs font-medium uppercase tracking-wider ${
+                      item.status === 'active'
+                        ? 'border-background/30 text-background'
+                        : item.status === 'complete'
+                        ? 'border-foreground text-foreground'
+                        : 'border-border text-muted-foreground'
                     }`}
                   >
                     {item.status === 'complete' ? 'Complete' : item.status === 'active' ? 'In Progress' : 'Upcoming'}
                   </span>
                 </div>
 
-                <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                <span className={`text-xs font-semibold uppercase tracking-widest ${
+                  item.status === 'active' ? 'text-background/70' : 'text-muted-foreground'
+                }`}>
                   {item.phase}
                 </span>
-                <h3 className="font-display text-xl font-bold text-foreground mt-1 mb-3">
+                <h3 className={`font-display text-xl font-bold mt-1 mb-3 tracking-tight ${
+                  item.status === 'active' ? 'text-background' : 'text-foreground'
+                }`}>
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-4">{item.description}</p>
+                <p className={`text-sm mb-4 ${
+                  item.status === 'active' ? 'text-background/70' : 'text-muted-foreground'
+                }`}>
+                  {item.description}
+                </p>
 
                 <ul className="space-y-2">
                   {item.items.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm">
                       <div
                         className={`w-1.5 h-1.5 rounded-full ${
-                          item.status === 'complete'
-                            ? 'bg-green-400'
-                            : item.status === 'active'
-                            ? 'bg-primary'
+                          item.status === 'active'
+                            ? 'bg-background'
+                            : item.status === 'complete'
+                            ? 'bg-foreground'
                             : 'bg-muted-foreground'
                         }`}
                       />
-                      <span className="text-muted-foreground">{feature}</span>
+                      <span className={item.status === 'active' ? 'text-background/80' : 'text-muted-foreground'}>
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -211,16 +219,16 @@ export default function Services() {
       {/* CTA */}
       <section className="section-padding">
         <div className="container-width">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 via-card to-accent/20 border border-border p-8 lg:p-16 text-center">
-            <div className="absolute inset-0 grid-pattern opacity-20" />
+          <div className="relative overflow-hidden rounded-lg bg-card border border-border p-8 lg:p-16 text-center">
+            <div className="absolute inset-0 grid-pattern opacity-30" />
             <div className="relative z-10">
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-4 tracking-tight">
                 Ready to Transform Your Esports Operations?
               </h2>
               <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
                 Get a personalized demo of our platform and see how ScoutIQ can give your team the edge.
               </p>
-              <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+              <Link to="/contact" className="btn-primary inline-flex items-center gap-2 uppercase tracking-wider">
                 Schedule a Demo
                 <ArrowRight size={18} />
               </Link>

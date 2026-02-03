@@ -23,18 +23,18 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="absolute inset-0 grid-pattern opacity-20" />
+      <div className="absolute inset-0 grid-pattern opacity-30" />
       
       <div className="relative z-10 w-full max-w-md px-4">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-primary-foreground font-bold">SQ</span>
+          <Link to="/" className="inline-flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded border border-foreground flex items-center justify-center">
+              <span className="text-foreground font-bold tracking-tight">SQ</span>
             </div>
-            <span className="font-display font-bold text-2xl text-foreground">ScoutIQ</span>
+            <span className="font-display font-bold text-2xl text-foreground tracking-tight">SCOUTIQ</span>
           </Link>
-          <h1 className="font-display text-2xl font-bold text-foreground mb-2">
+          <h1 className="font-display text-2xl font-bold text-foreground mb-2 tracking-tight">
             Welcome Back
           </h1>
           <p className="text-muted-foreground">
@@ -43,10 +43,10 @@ export default function Login() {
         </div>
 
         {/* Form */}
-        <div className="p-6 lg:p-8 rounded-xl bg-card border border-border">
+        <div className="p-6 lg:p-8 rounded-lg bg-card border border-border">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2 uppercase tracking-wider">
                 Email
               </label>
               <input
@@ -56,13 +56,13 @@ export default function Login() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-md bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-all"
                 placeholder="you@company.com"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2 uppercase tracking-wider">
                 Password
               </label>
               <div className="relative">
@@ -73,7 +73,7 @@ export default function Login() {
                   required
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all pr-12"
+                  className="w-full px-4 py-3 rounded-md bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-all pr-12"
                   placeholder="••••••••"
                 />
                 <button
@@ -90,18 +90,18 @@ export default function Login() {
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 rounded border-border bg-secondary text-primary focus:ring-primary"
+                  className="w-4 h-4 rounded border-border bg-background text-foreground focus:ring-foreground accent-foreground"
                 />
                 <span className="text-sm text-muted-foreground">Remember me</span>
               </label>
-              <a href="#" className="text-sm text-primary hover:text-primary/80 transition-colors">
+              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 Forgot password?
               </a>
             </div>
 
             <button
               type="submit"
-              className="w-full btn-primary flex items-center justify-center gap-2"
+              className="w-full btn-primary flex items-center justify-center gap-2 uppercase tracking-wider"
             >
               Sign In
               <ArrowRight size={18} />
@@ -111,7 +111,7 @@ export default function Login() {
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
               Don't have an account?{' '}
-              <Link to="/signup" className="text-primary hover:text-primary/80 transition-colors font-medium">
+              <Link to="/signup" className="text-foreground hover:text-foreground/80 transition-colors font-medium">
                 Sign up
               </Link>
             </p>

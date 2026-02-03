@@ -32,18 +32,18 @@ export default function Signup() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background py-12">
-      <div className="absolute inset-0 grid-pattern opacity-20" />
+      <div className="absolute inset-0 grid-pattern opacity-30" />
       
       <div className="relative z-10 w-full max-w-md px-4">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-primary-foreground font-bold">SQ</span>
+          <Link to="/" className="inline-flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded border border-foreground flex items-center justify-center">
+              <span className="text-foreground font-bold tracking-tight">SQ</span>
             </div>
-            <span className="font-display font-bold text-2xl text-foreground">ScoutIQ</span>
+            <span className="font-display font-bold text-2xl text-foreground tracking-tight">SCOUTIQ</span>
           </Link>
-          <h1 className="font-display text-2xl font-bold text-foreground mb-2">
+          <h1 className="font-display text-2xl font-bold text-foreground mb-2 tracking-tight">
             Create Your Account
           </h1>
           <p className="text-muted-foreground">
@@ -52,11 +52,11 @@ export default function Signup() {
         </div>
 
         {/* Features */}
-        <div className="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/20">
+        <div className="mb-6 p-4 rounded-lg border border-border bg-card">
           <ul className="grid grid-cols-2 gap-2">
             {features.map((feature) => (
               <li key={feature} className="flex items-center gap-2 text-sm">
-                <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                <Check className="w-4 h-4 text-foreground flex-shrink-0" />
                 <span className="text-muted-foreground">{feature}</span>
               </li>
             ))}
@@ -64,10 +64,10 @@ export default function Signup() {
         </div>
 
         {/* Form */}
-        <div className="p-6 lg:p-8 rounded-xl bg-card border border-border">
+        <div className="p-6 lg:p-8 rounded-lg bg-card border border-border">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2 uppercase tracking-wider">
                 Full Name
               </label>
               <input
@@ -77,13 +77,13 @@ export default function Signup() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-md bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-all"
                 placeholder="Your name"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2 uppercase tracking-wider">
                 Work Email
               </label>
               <input
@@ -93,14 +93,14 @@ export default function Signup() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-md bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-all"
                 placeholder="you@company.com"
               />
             </div>
 
             <div>
-              <label htmlFor="organization" className="block text-sm font-medium text-foreground mb-2">
-                Organization <span className="text-muted-foreground">(optional)</span>
+              <label htmlFor="organization" className="block text-sm font-medium text-foreground mb-2 uppercase tracking-wider">
+                Organization <span className="text-muted-foreground normal-case">(optional)</span>
               </label>
               <input
                 type="text"
@@ -108,13 +108,13 @@ export default function Signup() {
                 name="organization"
                 value={formData.organization}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-md bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-all"
                 placeholder="Your team or company"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2 uppercase tracking-wider">
                 Password
               </label>
               <div className="relative">
@@ -125,7 +125,7 @@ export default function Signup() {
                   required
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all pr-12"
+                  className="w-full px-4 py-3 rounded-md bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-foreground transition-all pr-12"
                   placeholder="Create a strong password"
                 />
                 <button
@@ -143,15 +143,15 @@ export default function Signup() {
                 type="checkbox"
                 id="terms"
                 required
-                className="w-4 h-4 mt-1 rounded border-border bg-secondary text-primary focus:ring-primary"
+                className="w-4 h-4 mt-1 rounded border-border bg-background text-foreground focus:ring-foreground accent-foreground"
               />
               <label htmlFor="terms" className="text-sm text-muted-foreground">
                 I agree to the{' '}
-                <a href="#" className="text-primary hover:text-primary/80 transition-colors">
+                <a href="#" className="text-foreground hover:text-foreground/80 transition-colors">
                   Terms of Service
                 </a>{' '}
                 and{' '}
-                <a href="#" className="text-primary hover:text-primary/80 transition-colors">
+                <a href="#" className="text-foreground hover:text-foreground/80 transition-colors">
                   Privacy Policy
                 </a>
               </label>
@@ -159,7 +159,7 @@ export default function Signup() {
 
             <button
               type="submit"
-              className="w-full btn-primary flex items-center justify-center gap-2"
+              className="w-full btn-primary flex items-center justify-center gap-2 uppercase tracking-wider"
             >
               Create Account
               <ArrowRight size={18} />
@@ -169,7 +169,7 @@ export default function Signup() {
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
               Already have an account?{' '}
-              <Link to="/login" className="text-primary hover:text-primary/80 transition-colors font-medium">
+              <Link to="/login" className="text-foreground hover:text-foreground/80 transition-colors font-medium">
                 Sign in
               </Link>
             </p>
