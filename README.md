@@ -1,73 +1,217 @@
-# Welcome to your Lovable project
+# 🧠 ScoutIQ — AI-Powered Esports Intelligence Platform
 
-## Project info
+ScoutIQ is an AI-driven esports intelligence platform designed to deliver scouting insights, match predictions, performance analytics, and strategic decision support for competitive esports teams, analysts, organizations, and investors.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Built with real-world esports data pipelines and advanced AI reasoning, ScoutIQ transforms raw match data into actionable competitive intelligence.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 What ScoutIQ Does
 
-**Use Lovable**
+ScoutIQ combines data engineering, statistical modeling, and AI reasoning to help esports stakeholders:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- 🔍 Scout teams and players
+- 📊 Analyze performance trends
+- 🔮 Predict match outcomes
+- 🧠 Generate AI-powered scouting reports
+- ⚔️ Compare teams head-to-head
+- 🧬 Extract insights even when live data sources fail
 
-Changes made via Lovable will be committed automatically to this repo.
+ScoutIQ is designed to never break — if external data sources go down, the intelligence core still produces predictions using internal models.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🏗️ Platform Architecture (High-Level)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```
+Client (Web UI)
+      ↓
+ScoutIQ API (Node.js + TypeScript)
+      ↓
+Intelligence Core
+ ├── Statistical Engine
+ ├── Prediction Engine
+ ├── AI Reasoning (LLM)
+ ├── Fallback Intelligence Layer
+ └── Data Normalization Layer
+      ↓
+External Data (GRID, datasets, AI models)
+```
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🧠 Core Capabilities
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 1️⃣ Matchup Analysis
+- Team vs Team breakdown
+- Strengths & weaknesses
+- Key player matchups
+- Win conditions
+- AI-generated tactical insights
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 2️⃣ AI Match Prediction
+- Win probability
+- Expected scoreline
+- Confidence rating
+- Upset potential analysis
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 3️⃣ Player & Team Scouting
+- Historical performance trends
+- Role impact analysis
+- Consistency & volatility signals
+
+### 4️⃣ Intelligence Fallback System
+Even if external esports APIs fail:
+- ScoutIQ still predicts outcomes
+- AI reasoning fills missing data
+- Statistical priors keep models stable
+
+---
+
+## 🌐 Project Structure
+
+```
+scoutiq-frontend/
+├── src/
+│   ├── components/
+│   │   ├── layout/          # Navbar, Footer, Layout
+│   │   ├── shared/          # Reusable UI components
+│   │   ├── ui/              # shadcn/ui components
+│   │   └── StarfieldCanvas.tsx  # Premium starfield background
+│   ├── pages/
+│   │   ├── Home.tsx         # Landing page
+│   │   ├── About.tsx        # Company info
+│   │   ├── Services.tsx     # Platform features
+│   │   ├── Pricing.tsx      # Plans & FAQ
+│   │   ├── Contact.tsx      # Contact form
+│   │   ├── Login.tsx        # Authentication
+│   │   └── Signup.tsx       # Registration
+│   ├── hooks/               # Custom React hooks
+│   ├── lib/                 # Utilities
+│   ├── assets/              # Images & static assets
+│   ├── App.tsx              # Main app component
+│   └── main.tsx             # Entry point
+├── public/
+├── index.html
+├── package.json
+├── vite.config.ts
+├── tailwind.config.js
+└── README.md
+```
+
+---
+
+## 🖥️ Running ScoutIQ Locally
+
+### ✅ Requirements
+
+- Node.js ≥ 18
+- npm or pnpm
+- Git
+
+### 🎨 Frontend Setup
+
+```bash
+cd scoutiq-frontend-forge
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Frontend runs on: **http://localhost:8080**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🔗 Host & Client Model
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+ScoutIQ supports a host-client architecture:
 
-## What technologies are used for this project?
+| Role | Responsibilities |
+|------|------------------|
+| 🖥️ Host | Runs backend API, AI models, intelligence core |
+| 🌐 Client | Access via browser, consume insights via UI |
 
-This project is built with:
+Multiple clients can connect to a single host. No heavy computation required on client devices.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🎮 Supported Esports (Expanding)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- League of Legends
+- Valorant
+- CS2
+- Rocket League
+- Fortnite
+- *(More coming)*
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🎯 Who ScoutIQ Is For
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Esports teams & coaches
+- Analysts & scouts
+- Tournament organizers
+- Betting & prediction research
+- Investors evaluating esports orgs
+- AI & data science enthusiasts
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## 🛣️ Roadmap
+
+### Near Term
+- Dataset-based intelligence branch (non-GRID)
+- Player embeddings & Elo modeling
+- Client authentication & dashboards
+
+### Mid Term
+- Multi-title intelligence
+- Advanced simulation engine
+- Team synergy graphs
+
+### Long Term
+- Autonomous esports AGI
+- Real-time match adaptation
+- Predictive roster optimization
+
+---
+
+## 🧬 Philosophy
+
+ScoutIQ is built on one principle:
+
+> Real intelligence must still work when data is incomplete.
+
+That's why ScoutIQ blends:
+- **Math**
+- **Statistics**
+- **AI reasoning**
+- **Domain knowledge**
+
+Instead of relying on a single data source.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite 7
+- **Styling**: Tailwind CSS 3.4
+- **UI Components**: shadcn/ui + Radix UI
+- **State Management**: TanStack Query v5
+- **Routing**: React Router DOM 6
+- **Icons**: Lucide React
+
+---
+
+## 📄 License
+
+This project is currently under private development. Licensing will be defined prior to public release.
+
+---
+
+## ✨ Final Note
+
+> ScoutIQ is not a dashboard.  
+> It's not a stats viewer.  
+> It's an intelligence system for competitive dominance.
+
